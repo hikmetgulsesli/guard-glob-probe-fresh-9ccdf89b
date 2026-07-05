@@ -1,0 +1,50 @@
+[
+  {
+    "screenId": "e61ed3cabe6c4821864e2d654868262c",
+    "screenTitle": "Status Utility - Guard Glob Probe Fresh",
+    "deviceType": "DESKTOP",
+    "elements": [
+      {
+        "type": "button",
+        "label": "refresh",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "Refresh Status",
+        "line": 158
+      },
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 153
+      }
+    ],
+    "navigation": [],
+    "buttons": [
+      {
+        "type": "button",
+        "label": "refresh",
+        "line": 139
+      },
+      {
+        "type": "button",
+        "label": "Refresh Status",
+        "line": 158
+      }
+    ],
+    "inputs": [
+      {
+        "type": "input",
+        "label": "checkbox",
+        "inputType": "checkbox",
+        "line": 153
+      }
+    ],
+    "hardcodedData": [],
+    "totalInteractive": 3,
+    "requiresRouter": false,
+    "requiresDragDrop": false
+  }
+]
