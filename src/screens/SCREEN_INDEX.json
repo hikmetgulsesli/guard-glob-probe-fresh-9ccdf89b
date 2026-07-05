@@ -1,0 +1,25 @@
+[
+  {
+    "screenId": "e61ed3cabe6c4821864e2d654868262c",
+    "title": "Status Utility - Guard Glob Probe Fresh",
+    "componentName": "StatusUtilityGuardGlobProbeFresh",
+    "file": "src/screens/StatusUtilityGuardGlobProbeFresh.tsx",
+    "buttons": 2,
+    "inputs": 1,
+    "links": 0,
+    "actions": [
+      {
+        "id": "refresh-1",
+        "kind": "button",
+        "label": "Refresh",
+        "index": 0
+      },
+      {
+        "id": "refresh-status-2",
+        "kind": "button",
+        "label": "Refresh Status",
+        "index": 1
+      }
+    ]
+  }
+]
