@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Guard Glob Probe Fresh - Status Utility</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#003ea8",
+                    "on-secondary-container": "#fefcff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#271901",
+                    "surface-container": "#e5eeff",
+                    "tertiary": "#000000",
+                    "on-background": "#0b1c30",
+                    "primary-fixed-dim": "#bec6e0",
+                    "inverse-on-surface": "#eaf1ff",
+                    "background": "#f8f9ff",
+                    "on-surface-variant": "#45464d",
+                    "tertiary-fixed": "#fcdeb5",
+                    "on-primary-fixed": "#131b2e",
+                    "error-container": "#ffdad6",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-variant": "#d3e4fe",
+                    "primary": "#000000",
+                    "outline-variant": "#c6c6cd",
+                    "surface-container-highest": "#d3e4fe",
+                    "on-primary": "#ffffff",
+                    "surface-tint": "#565e74",
+                    "surface-dim": "#cbdbf5",
+                    "primary-fixed": "#dae2fd",
+                    "primary-container": "#131b2e",
+                    "outline": "#76777d",
+                    "surface-container-low": "#eff4ff",
+                    "on-error-container": "#93000a",
+                    "on-tertiary-fixed": "#271901",
+                    "on-primary-container": "#7c839b",
+                    "secondary-fixed-dim": "#b4c5ff",
+                    "surface-container-high": "#dce9ff",
+                    "on-error": "#ffffff",
+                    "secondary-container": "#316bf3",
+                    "surface": "#f8f9ff",
+                    "on-surface": "#0b1c30",
+                    "inverse-surface": "#213145",
+                    "inverse-primary": "#bec6e0",
+                    "on-primary-fixed-variant": "#3f465c",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary-fixed": "#00174b",
+                    "on-tertiary-fixed-variant": "#574425",
+                    "secondary": "#0051d5",
+                    "tertiary-fixed-dim": "#dec29a",
+                    "on-tertiary-container": "#98805d",
+                    "secondary-fixed": "#dbe1ff",
+                    "surface-bright": "#f8f9ff",
+                    "error": "#ba1a1a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "32px",
+                    "unit": "4px",
+                    "lg": "24px",
+                    "sm": "8px",
+                    "xl": "32px",
+                    "gutter": "16px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "body-md": ["Inter"],
+                    "display-lg": ["Inter"],
+                    "label-caps": ["Inter"],
+                    "headline-md": ["Inter"],
+                    "title-sm": ["Inter"],
+                    "data-tabular": ["JetBrains Mono"]
+            },
+            "fontSize": {
+                    "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                    "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                    "label-caps": ["11px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                    "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                    "title-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                    "data-tabular": ["13px", { "lineHeight": "18px", "fontWeight": "500" }]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        body {
+            background-color: #f8f9ff;
+            color: #0b1c30;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+        .flat-card {
+            background-color: #ffffff;
+            border: 1px solid #E2E8F0;
+        }
+        .status-pill-green {
+            background-color: #10B981;
+            color: white;
+        }
+        .status-pill-blue {
+            background-color: #3B82F6;
+            color: white;
+        }
+        .log-item-border {
+            border-bottom: 1px solid #F1F5F9;
+        }
+    </style>
+</head>
+<body>
+<!-- TopAppBar -->
+<header class="bg-surface dark:bg-surface border-b border-outline-variant dark:border-outline flex justify-between items-center px-margin-desktop py-md w-full shrink-0">
+<div class="flex items-center gap-sm">
+<span class="font-headline-md text-headline-md font-bold text-primary dark:text-primary-fixed-dim">Guard Glob Probe Fresh</span>
+</div>
+<div class="flex items-center gap-md">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Last Updated: 14:02:11</span>
+<button class="p-unit rounded-DEFAULT hover:bg-surface-container-low transition-colors duration-150 ease-in-out text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">refresh</span>
+</button>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-1 overflow-y-auto p-margin-desktop bg-background flex justify-center">
+<div class="w-full max-w-4xl flex flex-col gap-gutter">
+<!-- Controls Section -->
+<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-md mb-sm">
+<div class="flex items-center gap-md">
+<span class="font-title-sm text-title-sm text-on-surface">System State</span>
+<!-- Toggle Switch -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-surface-tint rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#10B981]"></div>
+<span class="ml-3 font-label-caps text-label-caps text-on-surface-variant peer-checked:text-[#10B981]">Ready</span>
+</label>
+</div>
+<button class="bg-secondary text-on-secondary px-md py-sm rounded-DEFAULT font-label-caps text-label-caps hover:bg-on-secondary-fixed-variant transition-colors flex items-center gap-sm uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">sync</span>
+                    Refresh Status
+                </button>
+</div>
+<!-- Status Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="flat-card p-md flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[#10B981]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase">System Integrity</h3>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface">Secure</div>
+</div>
+<!-- Card 2 -->
+<div class="flat-card p-md flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[#3B82F6]" style="font-variation-settings: 'FILL' 1;">settings_input_antenna</span>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase">Probe Connectivity</h3>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface">Active</div>
+</div>
+<!-- Card 3 -->
+<div class="flat-card p-md flex flex-col gap-sm">
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-[#10B981]" style="font-variation-settings: 'FILL' 1;">monitor_heart</span>
+<h3 class="font-label-caps text-label-caps text-on-surface-variant uppercase">Data Stream</h3>
+</div>
+<div class="font-title-sm text-title-sm text-on-surface">Stable</div>
+</div>
+</div>
+<!-- Activity Log -->
+<div class="flat-card mt-sm flex flex-col">
+<div class="p-md bg-[#F1F5F9] border-b border-[#E2E8F0]">
+<h2 class="font-label-caps text-label-caps text-on-surface-variant uppercase">Activity Log</h2>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center p-md log-item-border hover:bg-[#F1F5F9] transition-colors">
+<span class="font-data-tabular text-data-tabular text-on-surface-variant w-32 shrink-0">14:02:11.452</span>
+<span class="px-2 py-unit text-[10px] uppercase font-bold rounded-DEFAULT status-pill-green mr-md shrink-0">Fresh</span>
+<span class="font-body-md text-body-md text-on-surface truncate">Handshake verified with primary node</span>
+</div>
+<div class="flex items-center p-md log-item-border hover:bg-[#F1F5F9] transition-colors">
+<span class="font-data-tabular text-data-tabular text-on-surface-variant w-32 shrink-0">14:01:45.109</span>
+<span class="px-2 py-unit text-[10px] uppercase font-bold rounded-DEFAULT status-pill-blue mr-md shrink-0">Info</span>
+<span class="font-body-md text-body-md text-on-surface truncate">Probe sequence initiated on Glob-7</span>
+</div>
+<div class="flex items-center p-md log-item-border hover:bg-[#F1F5F9] transition-colors">
+<span class="font-data-tabular text-data-tabular text-on-surface-variant w-32 shrink-0">14:00:02.881</span>
+<span class="px-2 py-unit text-[10px] uppercase font-bold rounded-DEFAULT status-pill-green mr-md shrink-0">Fresh</span>
+<span class="font-body-md text-body-md text-on-surface truncate">System state marked as Ready</span>
+</div>
+<div class="flex items-center p-md hover:bg-[#F1F5F9] transition-colors">
+<span class="font-data-tabular text-data-tabular text-on-surface-variant w-32 shrink-0">13:59:10.005</span>
+<span class="px-2 py-unit text-[10px] uppercase font-bold rounded-DEFAULT bg-[#F59E0B] text-white mr-md shrink-0">Probing</span>
+<span class="font-body-md text-body-md text-on-surface truncate">Initial diagnostic scan running</span>
+</div>
+</div>
+</div>
+<!-- Feedback / Empty State Panel -->
+<div class="flat-card p-md mt-sm bg-surface-container-low border-surface-variant flex items-start gap-md">
+<span class="material-symbols-outlined text-on-surface-variant mt-unit">info</span>
+<div class="flex flex-col gap-unit">
+<span class="font-body-md text-body-md font-semibold text-on-surface">No connection issues detected</span>
+<span class="font-body-md text-body-md text-on-surface-variant text-sm">All glob probes are reporting nominal status. System is operating within expected parameters.</span>
+</div>
+</div>
+</div>
+</main>
+</body></html>

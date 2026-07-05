@@ -1,0 +1,11 @@
+[
+  {
+    "screenId": "e61ed3cabe6c4821864e2d654868262c",
+    "name": "Status Utility - Guard Glob Probe Fresh",
+    "type": "app-screen",
+    "description": "Status Utility - Guard Glob Probe Fresh screen",
+    "surfaceIds": [
+      "SURF_STATUS_UTILITY"
+    ]
+  }
+]

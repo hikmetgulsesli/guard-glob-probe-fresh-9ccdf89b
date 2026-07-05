@@ -1,0 +1,195 @@
+{
+  "generatedAt": "2026-07-05T09:55:17.110Z",
+  "screenCount": 1,
+  "screens": {
+    "e61ed3cabe6c4821864e2d654868262c": {
+      "screenId": "e61ed3cabe6c4821864e2d654868262c",
+      "materialSymbolsRequired": true,
+      "sections": [
+        {
+          "tag": "header",
+          "layout": "flex-row",
+          "classes": [
+            "bg-surface",
+            "dark:bg-surface",
+            "border-b",
+            "border-outline-variant",
+            "dark:border-outline",
+            "flex",
+            "justify-between",
+            "items-center",
+            "px-margin-desktop",
+            "py-md"
+          ],
+          "childCount": 2
+        },
+        {
+          "tag": "main",
+          "layout": "flex-row",
+          "classes": [
+            "flex-1",
+            "overflow-y-auto",
+            "p-margin-desktop",
+            "bg-background",
+            "flex",
+            "justify-center"
+          ],
+          "childCount": 23
+        }
+      ],
+      "buttons": [
+        {
+          "kind": "button",
+          "label": "refresh",
+          "classes": [
+            "p-unit",
+            "rounded-DEFAULT",
+            "hover:bg-surface-container-low",
+            "transition-colors",
+            "duration-150",
+            "ease-in-out",
+            "text-primary",
+            "flex",
+            "items-center",
+            "justify-center"
+          ],
+          "icon": "refresh",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Refresh Status",
+          "classes": [
+            "bg-secondary",
+            "text-on-secondary",
+            "px-md",
+            "py-sm",
+            "rounded-DEFAULT",
+            "font-label-caps",
+            "text-label-caps",
+            "hover:bg-on-secondary-fixed-variant",
+            "transition-colors",
+            "flex",
+            "items-center",
+            "gap-sm",
+            "uppercase",
+            "tracking-wider"
+          ],
+          "icon": "sync",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        }
+      ],
+      "inputs": [
+        {
+          "kind": "input",
+          "type": "checkbox",
+          "label": "checkbox",
+          "placeholder": "",
+          "name": "",
+          "classes": [
+            "sr-only",
+            "peer"
+          ],
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "navLinks": [],
+      "cards": [],
+      "icons": [
+        "refresh",
+        "sync",
+        "check_circle",
+        "settings_input_antenna",
+        "monitor_heart",
+        "info"
+      ],
+      "images": [],
+      "cssVars": {},
+      "colorPalette": {
+        "on-secondary-fixed-variant": "#003ea8",
+        "on-secondary-container": "#fefcff",
+        "on-secondary": "#ffffff",
+        "tertiary-container": "#271901",
+        "surface-container": "#e5eeff",
+        "tertiary": "#000000",
+        "on-background": "#0b1c30",
+        "primary-fixed-dim": "#bec6e0",
+        "inverse-on-surface": "#eaf1ff",
+        "background": "#f8f9ff",
+        "on-surface-variant": "#45464d",
+        "tertiary-fixed": "#fcdeb5",
+        "on-primary-fixed": "#131b2e",
+        "error-container": "#ffdad6",
+        "surface-container-lowest": "#ffffff",
+        "surface-variant": "#d3e4fe",
+        "primary": "#000000",
+        "outline-variant": "#c6c6cd",
+        "surface-container-highest": "#d3e4fe",
+        "on-primary": "#ffffff",
+        "surface-tint": "#565e74",
+        "surface-dim": "#cbdbf5",
+        "primary-fixed": "#dae2fd",
+        "primary-container": "#131b2e",
+        "outline": "#76777d",
+        "surface-container-low": "#eff4ff",
+        "on-error-container": "#93000a",
+        "on-tertiary-fixed": "#271901",
+        "on-primary-container": "#7c839b",
+        "secondary-fixed-dim": "#b4c5ff",
+        "surface-container-high": "#dce9ff",
+        "on-error": "#ffffff",
+        "secondary-container": "#316bf3",
+        "surface": "#f8f9ff",
+        "on-surface": "#0b1c30",
+        "inverse-surface": "#213145",
+        "inverse-primary": "#bec6e0",
+        "on-primary-fixed-variant": "#3f465c",
+        "on-tertiary": "#ffffff",
+        "on-secondary-fixed": "#00174b",
+        "on-tertiary-fixed-variant": "#574425",
+        "secondary": "#0051d5",
+        "tertiary-fixed-dim": "#dec29a",
+        "on-tertiary-container": "#98805d",
+        "secondary-fixed": "#dbe1ff",
+        "surface-bright": "#f8f9ff",
+        "error": "#ba1a1a"
+      },
+      "fonts": [
+        "Material Symbols Outlined",
+        "Inter",
+        "JetBrains Mono"
+      ],
+      "layoutHints": {
+        "gridCols": 1,
+        "flexDirection": "col"
+      },
+      "behaviorContract": [
+        {
+          "kind": "button",
+          "label": "refresh",
+          "icon": "refresh",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "button",
+          "label": "Refresh Status",
+          "icon": "sync",
+          "action": "click-action",
+          "expectedBehavior": "produce visible DOM/state/URL feedback; never empty onClick"
+        },
+        {
+          "kind": "input",
+          "label": "checkbox",
+          "type": "checkbox",
+          "placeholder": "",
+          "expectedBehavior": "controlled value with onChange; validation if required by PRD"
+        }
+      ],
+      "tabBar": [],
+      "title": "Status Utility - Guard Glob Probe Fresh"
+    }
+  }
+}
